@@ -8,7 +8,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text onPress={this.doIt}>Hello World</Text>
+        <Text>{this.props.zipCode}</Text>
       </View>
     );
   }
