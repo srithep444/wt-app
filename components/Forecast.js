@@ -8,10 +8,9 @@ export default class Forecast extends React.Component {
   render() {
     return (
       <View  style={styles.container}>
-        <Text style={styles.font}>{this.props.main}</Text>
-        <Text style={styles.font}>{this.props.dascription}</Text>
-        <Text style={styles.font}>{this.props.temp}</Text>
-        <Text style={styles.font}>C</Text>
+        <Text style={styles.mainFont}>{this.props.main}</Text>
+        <Text style={styles.descriptionFont}>{this.props.description}</Text>
+        <Text style={styles.c}><Text style={styles.tempFont}>{this.props.temp}</Text>  ํC</Text>
       </View>
     );
   }
@@ -22,8 +21,27 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     justifyContent:'center',
     alignItems:'center'},
-  font:{
-    color:'#3300CC',
-    fontSize: 25,
+
+  mainFont : {
+      paddingTop : 10,
+      color : '#fff',
+      fontSize : 40,
+  },
+
+  descriptionFont : {
+      paddingTop : 20,
+      color : '#fff',
+      fontSize : 15,
+  },
+
+  tempFont:{
+    color:'#fff',
+    fontSize: 30,
+  },
+
+  c:{
+    paddingTop:20,
+    color:'#fff',
+    fontSize: 20,
   },
 });

@@ -7,7 +7,7 @@ export default class Weather extends React.Component {
         super(props);
         this.state = { 
             forecast: {
-                main: '-', description: '-', temp: 0
+                main: 'main', description: 'description', temp: 0
             }
         }
     }
@@ -15,28 +15,43 @@ export default class Weather extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <ImageBackground source={require('../assets/Peach(Edit)1.jpg')} style={styles.backdrop}>
-                <View style={styles.flex}>
+                <ImageBackground source={require('../assets/Backgound.jpg')} style={styles.backdrop}>
+                <View style={styles.textbox}>
                     <Text style={styles.font}>Zip code is {this.props.zipCode}.</Text>
                     <Forecast {...this.state.forecast} /> 
                 </View>  
-                </ImageBackground>
-            </View>
+                <View style={styles.blankContainer}></View>
+            </ImageBackground>
+        </View>
             
         );
     }
 }
 
 const styles = StyleSheet.create({
-  container: { paddingTop: 0  },
+  container: { paddingTop: 20  },
+
   backdrop: { width: '100%', height: '100%'},
+
+  blankContainer : {
+    flex : 3
+  },
+
   font:{
-    paddingTop:60,
-    color:'#3300CC',
+    paddingTop:25,
+    color:'#fff',
     fontSize: 25,
   },
-  flex: {
+
+  position: {
     flexDirection:'column',
     justifyContent:'center',
     alignItems:'center'},
+
+  textbox: {
+      flex: 2,
+      backgroundColor:'#001',
+      opacity: 0.3,
+      alignItems:'center'
+  }
 });
