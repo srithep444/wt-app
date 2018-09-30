@@ -48,7 +48,7 @@ export default class Weather extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: { paddingTop: 20  },
+  container: { paddingTop: 0  },
 
   backdrop: { width: '100%', height: '100%'},
 
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     alignItems:'center'},
 
   textbox: {
-      flex: 2,
+      flex: 2.5,
       backgroundColor:'#001',
       opacity: 0.3,
       alignItems:'center'
