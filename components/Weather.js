@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   textbox: {
       flex: 2.5,
       backgroundColor:'#001',
-      opacity: 0.3,
+      opacity: 0.5,
       alignItems:'center'
   }
 });

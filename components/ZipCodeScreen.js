@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, TouchableHighlight} from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableHighlight, ImageBackground} from 'react-native';
 import { Directions } from 'react-native-gesture-handler';
 
 const availableZipItems = [
@@ -31,20 +31,45 @@ export default class WeatherScreen extends React.Component{
     render(){
         const {navigate} = this.props.navigation;
         return (
+            
             <View>
+            <ImageBackground source={require('../assets/Backgound.jpg')} style={styles.backdrop}>
+            <View style={styles.textbox}>
                 <FlatList
                     data = {availableZipItems}
                     keyExtractor = {_keyExtractor}
                     renderItem = {({item}) => <ZipItem {...item} navigate={navigate} />}
                 />
+                </View>
+            </ImageBackground> 
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    listContainer: {
+    zipItem: {
         flexDirection: 'row', 
+        justifyContent:'space-between',
+        alignItems:'center'
     },
 
+    zipPlace: {
+        fontSize: 28,
+        color:'#fff',
+    },
+
+    zipCode: {
+        fontSize: 25,
+        color:'#fff',
+    },
+
+    textbox: {
+        flex: 2.5,
+        backgroundColor:'#001',
+        opacity: 0.6,
+
+    },
+
+    backdrop: { width: '100%', height: '100%'},
 });
